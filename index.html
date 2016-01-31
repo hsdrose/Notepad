@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<link rel="stylesheet" href="css/css.css" />
+		<script src="js/js.js"></script>
+		<script src="js/jquery-1.8.2.min.js"></script>
+		<script src="js/jquery.jqprint.js"></script>
+		<title></title>
+	</head>
+
+	<body>
+		<!--页首-->
+		<div class="top">
+			<!--关闭按钮-->
+			<div class="title">
+				<ul>
+					<li><img src="img/close.png" id="close"></li>
+					<li><img src="img/full.png" id="full" /> </li>
+					<li><img src="img/min.png" id="min" /> </li>
+				</ul>
+			</div>
+			<!--菜单-->
+			<div class="list" id="list">
+				<ul>
+					<li id="file">文件(F)</li>
+					<li id="edit">编辑(E)</li>
+					<li id="format">格式(O)</li>
+					<li id="See">查看(V)</li>
+					<li id="help">帮助(H)</li>
+				</ul>
+			</div>
+			<!--文件菜单-->
+			<div class="menu" id="menu">
+				<div class="F_menu" id="F_menu">
+					<ul>
+						<a href="index.html">
+							<li id="new">新建(N)<span>Ctrl+N</span></li>
+						</a>
+						<li id="open" style="position: relative;">打开(O)...<span>Ctrl+O</span>
+							<input type="file" id="file" onchange="handleFiles(this.files)" style="position: absolute;top: 0;left: 0;opacity: 0;filter:filter:alpha(opacity=0);" />
+						</li>
+						<li id="save">保存(S)<span>Ctrl+S</span></li>
+						<li id="savaAs">另存为(A)...</li>
+						<li id="page">页面设置(U)...</li>
+						<li id="print">打印(P)...<span>Ctrl+P</span></li>
+						<li id="quit">退出(X)</li>
+					</ul>
+				</div>
+				<!--编辑菜单-->
+				<div class="E_menu" id="E_menu">
+					<ul>
+						<li id="cancel">撤销(U)<span>Ctrl+Z</span></li>
+						<li id="shear">剪切(T)<span>Ctrl+X</span></li>
+						<li id="copy">复制(C)<span>Ctrl+C</span></li>
+						<li id="paste">粘贴(P)<span>Ctrl+V</span></li>
+						<li id="delete">删除(D)<span>Del</span></li>
+						<li id="lookup">查找(F)...<span>Ctrl+F</span></li>
+						<li id="findNext">查找下一个(N)<span>F3</span></li>
+						<li id="replace">替换(R)...<span>Ctrl+H</span></li>
+						<li id="goTo">转到(G)...<span>Ctrl+G</span></li>
+						<li id="select">
+							<input type="button" value="全选(A)                Ctrl+A" id="selectbtn" />
+						</li>
+						<li id="time">时间/日期(D)<span>F5</span></li>
+					</ul>
+				</div>
+				<!--格式菜单-->
+				<div class="O_menu" id="O_menu">
+					<ul>
+						<li id="wrap">
+							<input type="checkbox" class="checkbox" checked="checked" id="checkbox1"/>
+							<p>自动换行(W)</p>
+						</li>
+						<li id="typeface">字体(F)...</li>
+					</ul>
+				</div>
+				<!--查看菜单-->
+				<div class="S_menu" id="S_menu">
+					<ul>
+						<li id="status">
+							<input type="checkbox" class="checkbox" id="checkbox2" checked="checked" />
+							<p>状态栏(S)</p>
+						</li>
+					</ul>
+				</div>
+				<!--帮助菜单-->
+				<div class="H_menu" id="H_menu">
+					<ul>
+						<li id="viewHelp"><a href="http://windows.microsoft.com/zh-cn/windows-10/support">查看帮助(H)</a></li>
+						<li id="about">关于记事本(A)</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!--文本输入框-->
+		<div id="mainAuto">
+			<textarea class="main" contenteditable="true" id="main"></textarea>
+		</div>
+		<!--页面设置-->
+		<div id="PageSetup" class="PageSetup">
+			<p>页面设置<span class="close1" id="pageClose"><img src="img/close.png" /></span></p>
+			<div class="page">
+				<p>纸张</p>
+				<span>
+		    		大小(Z):
+		    		<select id="pageSize">
+		    			<option value="A3">A3</option>
+		    			<option value="A4"  selected = "selected">A4</option>
+		    			<option value="A5">A5</option>
+		    		</select>
+		    	</span>
+			</div>
+			<div class="preview">
+				<p>预览</p>
+				<div id="preview">
+					<div id="lf"></div>
+				</div>
+			</div>
+			<div id="direction">
+				<p>方向</p>
+				<div class="line">
+					<input type="radio" name="dir" id="line" checked="checked" />纵向(O)</div>
+				<div class="line">
+					<input type="radio" name="dir" id="transverse" />横向(A)</div>
+			</div>
+			<div id="pagemargin">
+				<p>页边距(px)</p>
+				<div class="Ptop">左(L):
+					<input type="text" value="20" id="left" />
+				</div>
+				<div class="Ptop">右(R):
+					<input type="text" value="20" id="right" />
+				</div>
+				<div class="Ptop">上(T):
+					<input type="text" value="20" id="top" />
+				</div>
+				<div class="Ptop">下(B):
+					<input type="text" value="20" id="bottom" />
+				</div>
+			</div>
+			<div class="header">
+				<span style="position: absolute; left: 10px;top:295px;">页眉(H):</span>
+				<input type="text" value="&f" />
+				<span style="position: absolute; left: 10px;top:330px;">页脚(F):</span>
+				<input type="text" value="第 &p 页" />
+			</div>
+			<div id="remove">取消</div>
+			<div id="sure">确定</div>
+		</div>
+		<!--查找-->
+		<div id="lookupBox" class="lookupBox">
+			<p>查找<span class="close1" id="lookUpClose"><img src="img/close.png" /></span></p>
+			<span class="findValue">查找内容(N):<input type="text"  id="findValue"/></span>
+			<div class="Ldiv" id="Fnext">查找下一个</div>
+			<div class="Ldiv">取消</div>
+			<div class="dection">
+				<p>方向</p>
+				<form>
+					<input type="radio" name="dection" value="向上" id="checkbox3" checked="checked" /> 向下
+					<input type="radio" name="dection" value="向下" id="checkbox4" /> 向上
+				</form>
+			</div>
+		</div>
+		<!--替换-->
+		<div class="replaceBox" id="replaceBox">
+			<p>替换<span class="close1" id="replaceClose"><img src="img/close.png" /></span></p>
+			<span class="replaceValue">查找内容(N):<input type="text" id="replaceValue" /></span>
+			<div class="Ldiv" id="Rdiv">查找下一个</div>
+			<span class="replaceValue">替换为(P):<input type="text"  style="margin-left:40px;" id="replaceAs"/></span>
+			<div class="Ldiv" id="Replace">替换</div>
+			<div class="Ldiv" id="AllReplace">全部替换</div>
+			<div class="Ldiv" style="margin-top:20px;">取消</div>
+		</div>
+		<!--转到-->
+		<div class="goToBox" id="goToBox">
+			<p>转到指定行<span class="close1" id="goToClose"><img src="img/close.png" /></span></p>
+			<span class="goToBoxValue">行号(L):<input type="text"  /></span>
+			<div class="Ldiv">取消</div>
+			<div class="Ldiv">转到</div>
+		</div>
+		<!--字体-->
+		<div class="font" id="font">
+			<div class="fontTop">
+				<p>字体<span class="close1" id="fontClose"><img src="img/close.png" /></span></p>
+			</div>
+			<div class="Ffamily" id="Ffamliy">
+				<p>字体(F):</p>
+				<input type="text" value="微软雅黑" id="famliyTxt" name="famliyTxt" />
+				<div class="family" id="family" style="overflow-y: scroll;">
+					<p>Georgia</p>
+					<p>Impactv</p>
+					<p>Verdana</p>
+					<p>Trebuchet MS</p>
+					<p>微软雅黑</p>
+					<p>黑体</p>
+					<p>宋体</p>
+					<p>Arial</p>
+					<p>Comic Sans MS</p>
+					<p>Georgia</p>
+					<p>Tahoma</p>
+					<p>Time News Roman</p>
+                    <p>Trebuchet MS</p>
+                    <p>Verdana</p>
+                    <p>Courier New</p>
+                    <p>Hei</p>
+                    <p>Monaco</p>
+                    <p>simhei</p>
+				</div>
+			</div>
+			<div class="Fshape" id="Fshape">
+				<p>字形(Y):</p>
+				<input type="text" value="常规" id="shapeTxt" />
+				<div class="shape" id="shape">
+					<p>常规</p>
+					<i><p>倾斜</p></i>
+					<strong><p>粗体</p></strong>
+					<strong><i><p>粗偏斜体</p></i></strong>
+				</div>
+			</div>
+			<div class="Fsize" id="Fsize">
+				<p>大小(S):</p>
+				<input type="text" value="16" id="sizeTxt" />
+				<div class="size" id="size">
+					<p>8</p>
+					<p>12</p>
+					<p>14</p>
+					<p>16</p>
+					<p>18</p>
+					<p>20</p>
+					<p>22</p>
+					<p>24</p>
+					<p>26</p>
+					<p>28</p>
+					<p>36</p>
+					<p>48</p>
+					<p>72</p>
+				</div>
+			</div>
+			<p style=" height:20px;width:30px;position: absolute; top:240px; left:230px; background: #F5F6F7;">示例</p>
+			<div id="xian">ABCD</div>
+			<input type="button" id="abolish" value="取消" />
+			<input type="button" id="confirm" value="确定" />
+
+		</div>
+		<!--状态栏-->
+		<div class="footer" id="footer">
+			<p id="number" class="footerp">0字</p>
+			<p id="hang" class="footerp"></p>
+		</div>
+		<!--关于记事本-->
+		<div id="aboutTxt" class="aboutTxt">
+			<p>关于"记事本"<span class="close1" id="aboutClose"><img src="img/close.png" /></span></p>
+
+			<div class="picture"><img src="img/win10logo.png" />
+				<p>Windows 10</p>
+			</div>
+
+		</div>
+		<!--覆盖层，弹出窗体后其他不可操作-->
+		<div id="cover">
+		</div>
+	</body>
+
+</html>

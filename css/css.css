@@ -1,0 +1,970 @@
+/*总布局*/
+
+* {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style: none;
+}
+
+body {
+	cursor: default;
+	font: 12px "微软雅黑";
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+
+/*页首*/
+
+.top {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 2;
+}
+
+.title {
+	height: 30px;
+	width: 100%;
+	background: #FFFFFF;
+}
+
+.tlttle ul {
+	height: 25px;
+	width: 100%;
+	overflow: hidden;
+	background: red;
+}
+
+.tlttle ul li {
+	height: 50px;
+	width: 25px;
+}
+
+.title ul li img {
+	height: 15px;
+	width: 15px;
+	float: right;
+	padding: 7px 15px;
+}
+
+
+/*主菜单*/
+
+.list {
+	background: #FFFFFF;
+}
+
+.list ul {
+	display: block;
+	height: 20px;
+	width: 100%;
+}
+
+.list ul li {
+	height: 20px;
+	width: 50px;
+	float: left;
+	font: 12px "微软雅黑";
+	text-align: center;
+}
+
+.menu div {
+	width: 180px;
+	height: auto;
+	font: 12px "微软雅黑";
+	float: left;
+	border: 1px solid #CCCCCC;
+	background: #f5f6f7;
+	box-shadow: #666 2px 2px 5px;
+}
+
+.menu div li {
+	width: 140px;
+	padding: 5px 0;
+	padding-left: 30px;
+	padding-right: 10px;
+	background: #f5f6f7;
+}
+
+.menu div span {
+	float: right;
+}
+
+.soild {
+	width: 150px;
+}
+
+
+/*次级菜单*/
+
+#savaAs {
+	border-bottom: 1px solid #CCCCCC;
+}
+
+#print {
+	border-bottom: 1px solid #CCCCCC;
+}
+
+#cancel {
+	border-bottom: 1px solid #CCCCCC;
+}
+#delete{
+	border-bottom: 1px solid #CCCCCC;
+}
+#goTo {
+	border-bottom: 1px solid #CCCCCC;
+}
+
+#viewHelp {
+	border-bottom: 1px solid #CCCCCC;
+}
+
+#wrap {
+	width: 180px;
+	margin-left: 0px;
+	padding: 0px;
+}
+
+#wrap p {
+	height: 30px;
+	line-height: 30px;
+}
+
+.checkbox {
+	height: 20px;
+	width: 20px;
+	border: 1px solid #CCCCCC;
+	background: #00B7EE;
+	margin-right: 8px;
+	margin-top: 5px;
+	float: left;
+}
+
+#status {
+	width: 180px;
+	margin-left: 0px;
+	padding: 0px;
+}
+
+#status p {
+	height: 30px;
+	line-height: 30px;
+}
+
+.F_menu {
+	display: none;
+}
+
+.E_menu {
+	display: none;
+	margin-left: 50px;
+}
+
+.E_menu #select {
+	padding: 0;
+}
+
+.E_menu #select input {
+	padding-left: 20px;
+	width: 180px;
+	height: 30px;
+	border: none;
+	background: #f5f6f7
+}
+
+.O_menu {
+	display: none;
+	margin-left: 100px;
+}
+
+.S_menu {
+	display: none;
+	margin-left: 150px;
+}
+
+.H_menu {
+	display: none;
+	margin-left: 200px;
+}
+
+
+/*文本输入框*/
+
+#mainAuto {
+	width: 100%;
+	margin-top: 50px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 1;
+	font: 16px "微软雅黑";
+	border-top: 1px solid #00B7EE;
+	margin-bottom: 30px;
+	overflow-y: hidden;
+}
+
+.main {
+	width: 100%;
+	height: 100%;
+	clear: both;
+	overflow-y: scroll;
+	min-height: 20px;
+	max-heigt: none;
+	z-index: 1;
+	font: 16px "微软雅黑";
+	border: none;
+	resize: none;
+}
+
+
+/*页面设置*/
+
+.PageSetup {
+	width: 620px;
+	height: 435px;
+	position: absolute;
+	background: #F5F6F7;
+	border: 1px solid #00B7EE;
+	top: 50px;
+	left: 0px;
+	overflow: hidden;
+	box-shadow: #999999 5px 5px 20px;
+	z-index: 12;
+	display: none;
+}
+
+.PageSetup p {
+	width: 610px;
+	height: 30px;
+	background: #FFFFFF;
+	font: 12px "微软雅黑";
+	line-height: 30px;
+	padding-left: 10px;
+}
+
+.PageSetup .close1 {
+	height: 30px;
+	width: 32px;
+	background: #FFFFFF;
+	display: block;
+	float: right;
+}
+
+.PageSetup p .close1 img {
+	height: 20px;
+	width: 20px;
+	float: right;
+	margin: 5px;
+}
+
+.PageSetup .page {
+	width: 400px;
+	height: 100px;
+	border: 1px solid #CCCCCC;
+	margin-top: 25px;
+	margin-left: 10px;
+	float: left;
+}
+
+.PageSetup .page p {
+	width: 24px;
+	height: 12px;
+	position: absolute;
+	top: 50px;
+	left: 20px;
+	background: #F5F6F7;
+	line-height: 1;
+	padding: 0;
+	margin: 0;
+}
+
+.PageSetup .page span {
+	margin-top: 20px;
+	display: block;
+	margin-left: 10px;
+	line-height: 25px;
+}
+
+.PageSetup .page select {
+	height: 25px;
+	width: 300px;
+	background: #EDEDED;
+	float: right;
+	margin-right: 10px;
+}
+
+.PageSetup .preview {
+	width: 180px;
+	height: 300px;
+	margin-right: 10px;
+	margin-top: 25px;
+	border: 1px solid #CCCCCC;
+	float: right;
+}
+
+.PageSetup #preview {
+	width: 116px;
+	height: 165px;
+	background: #FFFFFF;
+	border: 1px solid #CCCCCC;
+	margin: 0 auto;
+	margin-top: 60px;
+	position: relative;
+}
+
+.PageSetup .preview p {
+	width: 24px;
+	height: 12px;
+	position: absolute;
+	top: 50px;
+	left: 450px;
+	background: #F5F6F7;
+	line-height: 1;
+	padding: 0;
+	margin: 0;
+}
+
+.PageSetup .preview #lf {
+	border: 1px dashed #CCCCCC;
+	position: absolute;
+	top: 20px;
+	bottom: 20px;
+	left: 20px;
+	right: 20px;
+}
+
+.PageSetup #direction {
+	height: 100px;
+	width: 100px;
+	border: 1px solid #CCCCCC;
+	float: left;
+	margin-top: 20px;
+	margin-left: 10px;
+}
+
+.PageSetup #direction p {
+	width: 24px;
+	height: 12px;
+	position: absolute;
+	top: 173px;
+	left: 20px;
+	background: #F5F6F7;
+	line-height: 1;
+	padding: 0;
+	margin: 0;
+}
+
+.PageSetup #direction .line {
+	width: 60px;
+	height: 35px;
+	margin-top: 15px;
+	margin-left: 10px;
+}
+
+.PageSetup #pagemargin {
+	width: 285px;
+	height: 100px;
+	margin-right: 15px;
+	margin-top: 20px;
+	border: 1px solid #CCCCCC;
+	float: right;
+}
+
+.PageSetup #pagemargin .Ptop {
+	width: 105px;
+	height: 40px;
+	float: left;
+	margin-top: 12px;
+	margin-left: 22px;
+	line-height: 21px;
+}
+
+.PageSetup #pagemargin .Ptop input {
+	width: 50px;
+	height: 20px;
+	float: right;
+}
+
+.PageSetup #pagemargin p {
+	width: 60px;
+	height: 12px;
+	position: absolute;
+	top: 173px;
+	left: 140px;
+	background: #F5F6F7;
+	line-height: 1;
+	padding: 0;
+	margin: 0;
+}
+
+.PageSetup .header {
+	width: 402px;
+	height: 67px;
+	float: left;
+	margin-left: 10px;
+	margin-top: 12px;
+}
+
+.PageSetup .header input {
+	margin-left: 40px;
+	width: 300px;
+	height: 25px;
+	float: right;
+	margin-bottom: 5px;
+}
+
+.PageSetup .header span {
+	width: 50px;
+	height: 20px;
+}
+
+.PageSetup #remove {
+	width: 100px;
+	height: 30px;
+	background: #F5F6F7;
+	float: right;
+	margin-top: 20px;
+	margin-right: 20px;
+	border: 1px solid #CCCCCC;
+	text-align: center;
+	line-height: 30px;
+}
+
+.PageSetup #sure {
+	width: 100px;
+	height: 30px;
+	background: #F5F6F7;
+	float: right;
+	margin-top: 19px;
+	margin-right: 20px;
+	border: 1px solid #00B7EE;
+	text-align: center;
+	line-height: 30px;
+}
+
+.PageSetup #remove:hover {
+	background: #00B7EE;
+}
+
+.PageSetup #sure:hover {
+	background: #00B7EE;
+}
+
+
+/*查找*/
+
+.lookupBox {
+	width: 450px;
+	height: 160px;
+	position: absolute;
+	background: #F5F6F7;
+	border: 1px solid #00B7EE;
+	top: 200px;
+	left: 200px;
+	overflow: hidden;
+	box-shadow: #999999 5px 5px 20px;
+	z-index: 11;
+	display: none;
+}
+
+.lookupBox p {
+	width: 440px;
+	height: 30px;
+	background: #FFFFFF;
+	font: 12px "微软雅黑";
+	line-height: 30px;
+	padding-left: 10px;
+}
+
+.lookupBox .close1 {
+	height: 30px;
+	width: 32px;
+	background: #FFFFFF;
+	float: right;
+}
+
+.lookupBox p .close1 img {
+	height: 20px;
+	width: 20px;
+	float: right;
+	margin: 5px;
+}
+
+.lookupBox .findValue {
+	width: 300px;
+	height: 30px;
+	margin: 0 10px;
+	line-height: 50px;
+}
+
+.lookupBox .findValue input {
+	width: 210px;
+	height: 25px;
+	margin-left: 25px;
+	border: 1px solid #00B7EE;
+}
+
+.lookupBox .Ldiv {
+	width: 108px;
+	height: 28px;
+	background: #E5E5E5;
+	border: 1px solid #CCCCCC;
+	margin-top: 10px;
+	float: right;
+	text-align: center;
+	line-height: 28px;
+	margin-right: 10px;
+}
+
+.lookupBox .Ldiv:hover {
+	background: #00B7EE;
+}
+
+.dection {
+	height: 40px;
+	width: 180px;
+	border: 1px solid #CCCCCC;
+	float: right;
+	margin-right: 15px;
+	padding-bottom: 20px;
+}
+
+.dection p {
+	background: #F5F6F7;
+	width: 30px;
+	position: absolute;
+	top: 70px;
+	margin-left: 10px;
+}
+
+.dection input {
+	margin-top: 30px;
+	margin-left: 20px;
+	width: 15px;
+	height: 15px;
+	border-radius: 100%;
+}
+
+
+/*替换*/
+
+.replaceBox {
+	width: 450px;
+	height: 240px;
+	position: absolute;
+	background: #F5F6F7;
+	border: 1px solid #00B7EE;
+	top: 200px;
+	left: 200px;
+	overflow: hidden;
+	box-shadow: #999999 5px 5px 20px;
+	z-index: 11;
+	display: none;
+}
+
+.replaceBox p {
+	width: 440px;
+	height: 30px;
+	background: #FFFFFF;
+	font: 12px "微软雅黑";
+	line-height: 30px;
+	padding-left: 10px;
+}
+
+.replaceBox .close1 {
+	height: 30px;
+	width: 32px;
+	background: #FFFFFF;
+	display: block;
+	float: right;
+}
+
+.replaceBox p .close1 img {
+	height: 20px;
+	width: 20px;
+	float: right;
+	margin: 5px;
+}
+
+.replaceBox .replaceValue {
+	width: 300px;
+	height: 30px;
+	margin: 0 10px;
+	line-height: 50px;
+}
+
+.replaceBox .replaceValue input {
+	width: 210px;
+	height: 25px;
+	margin-left: 25px;
+	border: 1px solid #00B7EE;
+}
+
+.replaceBox .Ldiv {
+	width: 108px;
+	height: 28px;
+	background: #E5E5E5;
+	border: 1px solid #CCCCCC;
+	margin-top: 20px;
+	float: right;
+	text-align: center;
+	line-height: 28px;
+	margin-right: 10px;
+	clear: both;
+}
+
+.replaceBox .Ldiv:hover {
+	background: #00B7EE;
+}
+
+
+/*转到*/
+
+.goToBox {
+	width: 300px;
+	height: 160px;
+	position: absolute;
+	background: #F5F6F7;
+	border: 1px solid #00B7EE;
+	top: 200px;
+	left: 200px;
+	overflow: hidden;
+	box-shadow: #999999 5px 5px 20px;
+	z-index: 11;
+	display: none;
+}
+
+.goToBox p {
+	width: 290px;
+	height: 30px;
+	background: #FFFFFF;
+	font: 12px "微软雅黑";
+	line-height: 30px;
+	padding-left: 10px;
+}
+
+.goToBox .close1 {
+	height: 30px;
+	width: 32px;
+	background: #FFFFFF;
+	display: block;
+	float: right;
+}
+
+.goToBox p .close1 img {
+	height: 20px;
+	width: 20px;
+	float: right;
+	margin: 5px;
+}
+
+.goToBox .goToBoxValue {
+	width: 300px;
+	height: 30px;
+	margin: 0 10px;
+	line-height: 30px;
+}
+
+.goToBox .goToBoxValue input {
+	width: 275px;
+	height: 25px;
+	margin-left: 10px;
+	border: 1px solid #00B7EE;
+}
+
+.goToBox .Ldiv {
+	width: 80px;
+	height: 28px;
+	background: #E5E5E5;
+	border: 1px solid #CCCCCC;
+	margin-top: 20px;
+	float: right;
+	text-align: center;
+	line-height: 28px;
+	margin-right: 10px;
+}
+
+.goToBox .Ldiv:hover {
+	background: #00B7EE;
+}
+
+.btn {
+	padding-left: 20px;
+	width: 180px;
+	height: 30px;
+	border: none;
+	background: #f5f6f7;
+}
+
+#DelBtn {
+	border-bottom: 1px solid #CCCCCC;
+}
+
+
+/*字体*/
+
+.font {
+	width: 430px;
+	height: 530px;
+	position: absolute;
+	background: #F5F6F7;
+	border: 1px solid #00B7EE;
+	top: 200px;
+	left: 200px;
+	overflow: hidden;
+	box-shadow: #999999 5px 5px 20px;
+	z-index: 11;
+	font: 12px "微软雅黑";
+	display: none;
+}
+
+.font .fontTop p {
+	display: block;
+	width: 420px;
+	height: 30px;
+	background: #FFFFFF;
+	font: 12px "微软雅黑";
+	line-height: 30px;
+	padding-left: 10px;
+}
+
+.font .fontTop p .close1 {
+	height: 30px;
+	width: 32px;
+	background: #FFFFFF;
+	display: block;
+	float: right;
+}
+
+.font .fontTop p .close1 img {
+	height: 20px;
+	width: 20px;
+	float: right;
+	margin: 6px;
+}
+
+.font .Ffamily {
+	width: 170px;
+	height: 200px;
+	margin-left: 10px;
+	float: left;
+}
+
+.font .Ffamily input {
+	width: 166px;
+	height: 22px;
+	border: 1px solid #00B7EE;
+}
+
+.font .Ffamily .family {
+	width: 166px;
+	height: 150px;
+	background: #FFFFFF;
+	overflow-y: scroll;
+	border: 1px solid #CCCCCC;
+}
+
+.font .Ffamily .family p {
+	width: 148px;
+	height: 20px;
+}
+
+.font .Fshape {
+	width: 125px;
+	height: 200px;
+	margin-left: 10px;
+	float: left;
+}
+
+.font .Fshape input {
+	width: 120px;
+	height: 22px;
+	border: 1px solid #00B7EE;
+}
+
+.font .Fshape .shape {
+	width: 120px;
+	height: 150px;
+	background: #FFFFFF;
+	overflow-y: scroll;
+	border: 1px solid #CCCCCC;
+}
+
+.font .Fshape .shape p {
+	width: 100px;
+	height: 20px;
+}
+
+.font .Fsize {
+	width: 90px;
+	height: 200px;
+	margin-left: 10px;
+	float: left;
+}
+
+.font .Fsize input {
+	width: 90px;
+	height: 22px;
+	border: 1px solid #00B7EE;
+}
+
+.font .Fsize .size {
+	width: 90px;
+	height: 150px;
+	background: #FFFFFF;
+	overflow-y: scroll;
+	border: 1px solid #CCCCCC;
+}
+
+.font .Fsize .size p {
+	width: 70px;
+	height: 20px;
+}
+
+.font #confirm {
+	width: 60px;
+	height: 30px;
+	background: #F5F7F9;
+	border: 1px solid #00B7EE;
+	float: right;
+	margin-right: 15px;
+	margin-top: 120px;
+}
+
+.font #confirm:hover {
+	background: #F0F6F9;
+}
+
+.font #abolish {
+	width: 60px;
+	height: 30px;
+	background: #F5F7F9;
+	border: 1px solid #CCCCCC;
+	float: right;
+	margin-right: 15px;
+	margin-top: 120px;
+	clear: right;
+}
+
+.font #abolish:hover {
+	background: #F0F6F9;
+}
+
+.font #xian {
+	width: 200px;
+	height: 100px;
+	background: #FFFFFF;
+	float: right;
+	margin-right: 14px;
+	margin-top: 20px;
+	border: 1px solid #CCCCCC;
+	font: 16px "微软雅黑";
+	clear: right;
+	line-height: 100px;
+	text-align: center;
+}
+
+
+/*状态栏*/
+
+.footer {
+	position: fixed;
+	height: 30px;
+	width: 100%;
+	background: #f5f6f7;
+	bottom: 0;
+	z-index: 2;
+	border-top: 1px solid #CCCCCC;
+}
+
+.footer p {
+	width: 60px;
+	height: 20px;
+	float: right;
+	margin-right: 10px;
+	margin-top: 8px;
+}
+
+
+/*帮助*/
+
+.aboutTxt {
+	width: 530px;
+	height: 500px;
+	position: absolute;
+	background: #F5F6F7;
+	border: 1px solid #00B7EE;
+	top: 200px;
+	left: 200px;
+	overflow: hidden;
+	box-shadow: #999999 5px 5px 20px;
+	z-index: 11;
+	display: none;
+}
+
+.aboutTxt p {
+	width: 520px;
+	height: 30px;
+	background: #FFFFFF;
+	font: 12px "微软雅黑";
+	line-height: 30px;
+	padding-left: 10px;
+}
+
+.aboutTxt p .close1 {
+	height: 30px;
+	width: 32px;
+	background: #FFFFFF;
+	display: block;
+	float: right;
+}
+
+.aboutTxt p .close1 img {
+	height: 20px;
+	width: 20px;
+	float: right;
+	margin: 6px;
+}
+
+.picture {
+	margin: 15px;
+	width: 500px;
+	height: 70px;
+	border-bottom: 1px solid #CCCCCC;
+}
+
+.picture img {
+	height: 50px;
+	width: 50px;
+	margin-left: 70px;
+	margin-right: 20px;
+	margin-top: 5px;
+	float: left;
+}
+
+.picture p {
+	background: #F5F6F7;
+	font: 50px "微软雅黑";
+	color: #00B7EE;
+}
+
+
+/*覆盖层*/
+
+#cover {
+	width: 100%;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	z-index: 10;
+	display: none;
+}
